@@ -4,8 +4,10 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-
-
+const principal = 200000;
+const interestRate = 0.05;
+const years = 30;
+const name = "Karen";
 
 
 // 🏡 Task 1.5: Simple Math
@@ -16,6 +18,20 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 Create another variable called `periods` and give it the value of years*12.
 */
 
+const monthlyInterestRate = interestRate/12;
+const periods = years*12;
+
+// function divide(interestRate, months){
+//     const monthlyInterestRate = interestRate/12;
+//     return monthlyInterestRate;
+// }
+// console.log(divide(interestRate,12));
+
+// function multiply(years, months){
+//     const periods = years*12;
+//     return periods;
+// }
+// console.log(multiply(years,12));
 
 
 
@@ -29,7 +45,36 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+// function add(one, interestRate){
+//     let interestRatePlusOne = 1 + interestRate;
+//     return interestRatePlusOne;
+// }
+// console.log(add(1, interestRate));
 
+// function power(interestRatePlusOne, periods){
+//     return Math.pow(1.05, 360);
+// }
+// console.log(power());
+
+// // function power(a, b){
+// //     let a = 1 + interestRate;
+// //     let b = years*12;
+// //     return Math.pow(a, b);
+// // }
+// // console.log(power(a,b));
+// let numerator = interestRate*Math.pow(1 + interestRate, periods)
+// let denominator = Math.pow(1 + interestRate, periods) - 1
+// let monthlyRate = numerator/denominator
+
+const numerator = monthlyInterestRate*Math.pow(1+ monthlyInterestRate, periods);
+const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+const nd = numerator/denominator;
+
+function calculate(principal, nd){
+    const monthlyRate = principal*nd;
+    return monthlyRate;
+}
+console.log(calculate(principal,nd));
 
 
 // 🏡 Task 3: Function
@@ -37,6 +82,19 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+
+// function logsSchool( School, descriptor ){
+//     console.log(`${School} ${descriptor}`);
+// }
+
+// logsSchool('Lambda', 'is Awesome!'); // logs Lambda is Awesome!
+
+function mortgageCalculator(name, monthlyRate){
+    const monthlyRate = principal*nd;
+    return monthlyRate;
+    console.log(`${name}, your monthly rate is ${monthlyRate}`);
+}
+mortgageCalculator("Karen", "monthlyRate");
 
 
 
