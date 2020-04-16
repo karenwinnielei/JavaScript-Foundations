@@ -168,12 +168,12 @@ function variableInterestRate(P, I, N){
     const principal = P;
     let interestRate = I;
     let name = "Karen";
-    const monthlyInterestRate = I/12;
+    const monthlyInterestRate = i/12;
     let periods = N*12;
     const numerator = monthlyInterestRate*Math.pow(1+ monthlyInterestRate, periods);
     const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
-    const monthlyRate = principal*numerator/denominator; 
-    console.log(`${name}, your monthly rate is ${monthlyRate}`)
+    const monthlyRate = Math.round(principal*numerator/denominator); 
+    console.log(`${name}, with an interest rate of ${i}, your monthly rate is ${monthlyRate}`)
 }
 }
 variableInterestRate(200000, 0.04, 30);
